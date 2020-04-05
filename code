@@ -1,0 +1,42 @@
+class Account:
+#An accoount class has been created with attribute owner and balance
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
+# You can create multiple object
+    def __str__ (self):
+        return (f'Account owner:   {self.owner}\nAccount balance: ${self.balance}')
+#Return the owner and its balance
+    def deposit(self,credit):
+        if credit >= 0 :
+            print('Deposit Accepted')
+            self.balance += credit
+        else:print('Deposit Not Accepted')
+#Deposit some amount
+    def withdraw(self,debit):
+        if debit <= self.balance :
+            print('Withdrawal Accepted')
+            self.balance -= debit
+        else:
+            print('Fund Unavailable!')
+#Widraw some amount
+
+'''
+>>> acct1 = Account('Jose',100)
+>>> print(acct1)
+Account owner:   Jose
+Account balance: $100
+>>> acct1.owner
+'Jose'
+>>> acct1.balance
+100
+>>> acct1.deposit(50)
+Deposit Accepted
+>>> acct1.withdraw(75)
+Withdrawal Accepted
+>>> acct1.withdraw(500)
+Fund Unavailable!
+>>> 
+
+These are the Sample output and input for the above program
+'''
